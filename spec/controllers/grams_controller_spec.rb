@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
 
+  
+
   describe "grams#destroy action" do
     it "shouldn't allow users who didn't create the gram to destroy it" do
       gram = FactoryGirl.create(:gram)
@@ -179,7 +181,7 @@ RSpec.describe GramsController, type: :controller do
           picture: fixture_file_upload("/picture.jpg", 'image/jpg')
         } 
       }
-      
+
       expect(response).to redirect_to root_path
 
       gram = Gram.last
